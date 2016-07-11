@@ -5,7 +5,7 @@ endef
 
 define directory-clean
 	@echo RM $($(1)-dir-$(2))
-	@rm -f $($(1)-dir-$(2))
+	@rm -rf $($(1)-dir-$(2))
 endef
 
 define directory

@@ -6,12 +6,15 @@ include $(CURDIR)/$(1)/rules.mk
 endef
 
 define _module_call
-$(1)-$(2): $(1)-links-$(2)
+$(1)-$(2): $(1)-dirs-$(2) $(1)-links-$(2)
 
 $(foreach l, $($(1)-links), $(eval $(call symlink,$(1),$(2),$(l))))
 $(1)-links-$(2): $(addprefix $(1)-link-$(2)-,$($(1)-links))
 
-.PHONY:$(1)-$(2) $(1)-links-$(2)
+$(foreach d, $($(1)-dirs), $(eval $(call directory,$(1),$(2),$(d))))
+$(1)-dirs-$(2): $(addprefix $(1)-dir-$(2)-,$($(1)-dirs))
+
+.PHONY: $(1)-$(2) $(1)-dirs-$(2) $(1)-links-$(2)
 endef
 
 modules =	\
