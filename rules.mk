@@ -18,8 +18,10 @@ $(1)-dirs-$(2): $(addprefix $(1)-dir-$(2)-,$($(1)-dirs))
 endef
 
 modules =	\
-  tests		\
-  tests2
+  awesome	\
+  dotfiles	\
+  vim		\
+  zsh
 
 $(foreach m, $(modules), $(eval $(call _module_init,$(m))))
 $(foreach m, $(modules), $(eval $(call _module_call,$(m),install)))
