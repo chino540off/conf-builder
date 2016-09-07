@@ -1,6 +1,6 @@
 define symlink-install
 	@echo LN $($(1)-link-$(2))
-	@ln -s $(CURDIR)/$(1)/$2 $($(1)-link-$(2))
+	@[ -L $($(1)-link-$(2)) ] || ln -s $(CURDIR)/$(1)/$2 $($(1)-link-$(2))
 endef
 
 define symlink-clean

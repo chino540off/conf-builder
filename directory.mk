@@ -1,6 +1,6 @@
 define directory-install
 	@echo MKDIR $($(1)-dir-$(2))
-	@mkdir -p $($(1)-dir-$(2))
+	@[ -d $($(1)-dir-$(2)) ] || mkdir -p $($(1)-dir-$(2))
 endef
 
 define directory-clean
