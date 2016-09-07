@@ -20,6 +20,7 @@ endef
 modules =	\
   awesome	\
   dotfiles	\
+  scripts	\
   vim		\
   zsh
 
