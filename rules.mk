@@ -21,7 +21,7 @@ modules =	\
   awesome	\
   dotfiles	\
   scripts	\
-  vim		\
+  nvim		\
   zsh
 
 $(foreach m, $(modules), $(eval $(call _module_init,$(m))))
