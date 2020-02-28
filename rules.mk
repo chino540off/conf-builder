@@ -18,6 +18,7 @@ $(1)-dirs-$(2): $(addprefix $(1)-dir-$(2)-,$($(1)-dirs))
 endef
 
 modules =	\
+  i3		\
   awesome	\
   dotfiles	\
   scripts	\
