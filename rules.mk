@@ -23,14 +23,6 @@ $(foreach cmd, $($(1)-cmds), $(eval $(call check,$(1),$(cmd))))
 $(1)-check: $(addprefix $(1)-check-,$($(1)-cmds))
 endef
 
-modules =	\
-  i3		\
-  awesome	\
-  dotfiles	\
-  scripts	\
-  nvim		\
-  zsh
-
 $(foreach m, $(modules), $(eval $(call _module_init,$(m))))
 $(foreach m, $(modules), $(eval $(call _module_call,$(m),install)))
 $(foreach m, $(modules), $(eval $(call _module_call,$(m),clean)))
