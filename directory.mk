@@ -1,10 +1,10 @@
 define directory-install
-	@echo MKDIR $($(1)-dir-$(2))
+	@echo "$(COLOUR_BLUE)MKDIR$(END_COLOUR) $($(1)-dir-$(2))"
 	@[ -d $($(1)-dir-$(2)) ] || mkdir -p $($(1)-dir-$(2))
 endef
 
 define directory-clean
-	@echo RM $($(1)-dir-$(2))
+	@echo "$(COLOUR_BLUE)RM$(END_COLOUR) $($(1)-dir-$(2))"
 	@rm -rf $($(1)-dir-$(2))
 endef
 

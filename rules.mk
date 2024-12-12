@@ -1,3 +1,9 @@
+COLOUR_GREEN=\033[0;32m
+COLOUR_YELLOW=\033[0;33m
+COLOUR_RED=\033[0;31m
+COLOUR_BLUE=\033[0;34m
+END_COLOUR=\033[0m
+
 include $(CURDIR)/builder/symlink.mk
 include $(CURDIR)/builder/directory.mk
 include $(CURDIR)/builder/check.mk

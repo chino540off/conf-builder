@@ -1,10 +1,10 @@
 define symlink-install
-	@echo LN $($(1)-link-$(2))
-	@[ -L $($(1)-link-$(2)) ] || ln -s $(CURDIR)/$(1)/$2 $($(1)-link-$(2))
+	@echo "$(COLOUR_BLUE)LN$(END_COLOUR) $($(1)-link-$(2))"
+	@ln -fs $(CURDIR)/$(1)/$2 $($(1)-link-$(2))
 endef
 
 define symlink-clean
-	@echo RM $($(1)-link-$(2))
+	@echo "$(COLOUR_BLUE)RM$(END_COLOUR) $($(1)-link-$(2))"
 	@rm -f $($(1)-link-$(2))
 endef
 
